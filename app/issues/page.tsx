@@ -1,10 +1,11 @@
-import { Button } from '@radix-ui/themes';
-import Link from 'next/link';
+import { Metadata } from 'next';
+import Issues from '../components/issues/Issues';
+
+export const metadata: Metadata = {
+  title: 'Issues | Issue tracker',
+  description: '',
+};
 
 export default function Page() {
-  return (
-    <Button>
-      <Link href="/issues/new">New Issue</Link>
-    </Button>
-  );
+  return <Issues />;
 }
