@@ -1,6 +1,6 @@
-import { createIssueSchema } from "@/app/lib/validation/validationSchemas";
-import prisma from "@/prisma/client";
-import { NextRequest, NextResponse } from "next/server";
+import { createIssueSchema } from '@/app/lib/validation/validationSchemas';
+import prisma from '@/prisma/client';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -23,10 +23,10 @@ export async function GET(_: NextRequest) {
     const issues = await prisma.issue.findMany();
     return NextResponse.json(issues, { status: 200 });
   } catch (error) {
-    console.error("Error fetching issues: ", error);
+    console.error('Error fetching issues: ', error);
     return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
+      { error: 'Internal Server Error' },
+      { status: 500 },
     );
   }
 }

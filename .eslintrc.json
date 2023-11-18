@@ -1,3 +1,22 @@
 {
-  "extends": "next/core-web-vitals"
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"],
+        "moduleDirectory": ["src", "node_modules"]
+      }
+    }
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "rules": {
+    "import/no-named-as-default": 0,
+    "no-unused-vars": "off",
+    "@next/next/no-img-element": "off"
+  }
 }
